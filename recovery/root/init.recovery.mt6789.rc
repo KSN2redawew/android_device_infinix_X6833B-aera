@@ -1,5 +1,4 @@
 import /init.tee.rc
-import /init.device.rc
 import /init.wifi.rc
 
 on init
