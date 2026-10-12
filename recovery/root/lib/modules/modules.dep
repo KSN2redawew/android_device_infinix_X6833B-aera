@@ -207,3 +207,15 @@
 /lib/modules/cmdq-platform-mt6789.ko: /lib/modules/mtk-cmdq-drv-ext.ko /lib/modules/vcp_status.ko /lib/modules/mmprofile.ko /lib/modules/irq-dbg.ko /lib/modules/mtk-smi-dbg.ko /lib/modules/mtk-smi.ko /lib/modules/emi.ko /lib/modules/emi-mpu.ko /lib/modules/iommu_debug.ko /lib/modules/device-apc-common.ko /lib/modules/aee_aed.ko /lib/modules/mrdump.ko /lib/modules/log_store.ko
 /lib/modules/mac80211.ko: /lib/modules/cfg80211.ko
 /lib/modules/mtk_mdpm.ko:
+/lib/modules/connfem.ko:
+/lib/modules/btif_drv.ko:
+/lib/modules/connadp.ko:
+/lib/modules/ccci_util_lib.ko:
+/lib/modules/ccci_auxadc.ko: /lib/modules/ccci_util_lib.ko
+/lib/modules/rps_perf.ko:
+/lib/modules/ccmni.ko: /lib/modules/rps_perf.ko
+/lib/modules/ccci_md_all.ko: /lib/modules/transsion_tranlog.ko /lib/modules/ccmni.ko /lib/modules/rps_perf.ko /lib/modules/ccci_auxadc.ko /lib/modules/ccci_util_lib.ko /lib/modules/mtk_pbm.ko /lib/modules/mtk_mdpm.ko /lib/modules/mtk_dynamic_loading_throttling.ko /lib/modules/mtk_low_battery_throttling.ko
+/lib/modules/mddp.ko: /lib/modules/ccci_md_all.ko /lib/modules/transsion_tranlog.ko /lib/modules/ccmni.ko /lib/modules/rps_perf.ko /lib/modules/ccci_auxadc.ko /lib/modules/ccci_util_lib.ko /lib/modules/mtk_pbm.ko /lib/modules/mtk_mdpm.ko /lib/modules/mtk_dynamic_loading_throttling.ko /lib/modules/mtk_low_battery_throttling.ko
+/lib/modules/wmt_drv.ko: /lib/modules/btif_drv.ko /lib/modules/connadp.ko /lib/modules/ccci_md_all.ko /lib/modules/transsion_tranlog.ko /lib/modules/ccmni.ko /lib/modules/rps_perf.ko /lib/modules/ccci_auxadc.ko /lib/modules/ccci_util_lib.ko /lib/modules/mtk_pbm.ko /lib/modules/mtk_mdpm.ko /lib/modules/mtk_dynamic_loading_throttling.ko /lib/modules/mtk_low_battery_throttling.ko
+/lib/modules/wmt_chrdev_wifi.ko: /lib/modules/wmt_drv.ko /lib/modules/btif_drv.ko /lib/modules/connadp.ko /lib/modules/ccci_md_all.ko /lib/modules/transsion_tranlog.ko /lib/modules/ccmni.ko /lib/modules/rps_perf.ko /lib/modules/ccci_auxadc.ko /lib/modules/ccci_util_lib.ko /lib/modules/mtk_pbm.ko /lib/modules/mtk_mdpm.ko /lib/modules/mtk_dynamic_loading_throttling.ko /lib/modules/mtk_low_battery_throttling.ko
+/lib/modules/wlan_drv_gen4m_6789.ko: /lib/modules/mddp.ko /lib/modules/wmt_chrdev_wifi.ko /lib/modules/wmt_drv.ko /lib/modules/btif_drv.ko /lib/modules/connadp.ko /lib/modules/ccci_md_all.ko /lib/modules/transsion_tranlog.ko /lib/modules/ccmni.ko /lib/modules/rps_perf.ko /lib/modules/ccci_auxadc.ko /lib/modules/ccci_util_lib.ko /lib/modules/mtk_pbm.ko /lib/modules/mtk_mdpm.ko /lib/modules/mtk_dynamic_loading_throttling.ko /lib/modules/mtk_low_battery_throttling.ko

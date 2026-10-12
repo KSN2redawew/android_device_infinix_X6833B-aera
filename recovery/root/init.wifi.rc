@@ -1,0 +1,87 @@
+on post-fs-data
+    # Wi-Fi directory setup
+    mkdir /data/misc 01771 system misc
+    mkdir /data/misc/wifi 0770 wifi wifi
+    mkdir /data/misc/wifi/sockets 0770 wifi wifi
+    mkdir /data/misc/dhcp 0770 dhcp dhcp
+    mkdir /data/vendor/wifi 0770 wifi wifi
+    mkdir /data/vendor/wifi/wpa 0770 wifi wifi
+    mkdir /data/vendor/wifi/wpa/sockets 0770 wifi wifi
+    mkdir /data/vendor/stp_dump 0755 system system
+    mkdir /data/vendor/connsyslog 0755 system system
+
+on boot
+    # Load connectivity base drivers
+    insmod /lib/modules/connfem.ko
+    insmod /lib/modules/btif_drv.ko
+    insmod /lib/modules/connadp.ko
+    insmod /lib/modules/ccci_util_lib.ko
+    insmod /lib/modules/ccci_auxadc.ko
+    insmod /lib/modules/rps_perf.ko
+    insmod /lib/modules/ccmni.ko
+    insmod /lib/modules/ccci_md_all.ko
+    insmod /lib/modules/mddp.ko
+    insmod /lib/modules/wmt_drv.ko
+
+    # Start WMT loader & launcher
+    start wmt_loader
+    start wmt_launcher
+
+on property:vendor.connsys.driver.ready=yes
+    insmod /lib/modules/wmt_chrdev_wifi.ko
+    insmod /lib/modules/wlan_drv_gen4m_6789.ko
+    start wlan_assistant
+
+service wmt_loader /vendor/bin/wmt_loader
+    class early_hal
+    user root
+    group root system wifi
+    oneshot
+    disabled
+    seclabel u:r:recovery:s0
+
+service wmt_launcher /vendor/bin/wmt_launcher -p /vendor/firmware/ -o 1
+    class early_hal
+    user root
+    group root system wifi
+    disabled
+    seclabel u:r:recovery:s0
+
+service wlan_assistant /vendor/bin/wlan_assistant
+    class main
+    user root
+    group root system gps inet wifi
+    disabled
+    seclabel u:r:recovery:s0
+
+service wpa_supplicant /vendor/bin/hw/wpa_supplicant \
+    -Dnl80211 -iwlan0 -c/vendor/etc/wifi/wpa_supplicant.conf \
+    -O/data/vendor/wifi/wpa/sockets -dd \
+    -g@android:wpa_wlan0
+    interface android.hardware.wifi.supplicant@1.0::ISupplicant default
+    interface android.hardware.wifi.supplicant@1.1::ISupplicant default
+    interface android.hardware.wifi.supplicant@1.2::ISupplicant default
+    interface android.hardware.wifi.supplicant@1.3::ISupplicant default
+    interface android.hardware.wifi.supplicant@1.4::ISupplicant default
+    socket wpa_wlan0 dgram 660 wifi wifi
+    class main
+    user root
+    group root wifi inet keystore
+    disabled
+    oneshot
+    seclabel u:r:recovery:s0
+
+service vendor.wifi_hal_legacy /vendor/bin/hw/android.hardware.wifi@1.0-service-lazy
+    interface android.hardware.wifi@1.0::IWifi default
+    interface android.hardware.wifi@1.1::IWifi default
+    interface android.hardware.wifi@1.2::IWifi default
+    interface android.hardware.wifi@1.3::IWifi default
+    interface android.hardware.wifi@1.4::IWifi default
+    interface android.hardware.wifi@1.5::IWifi default
+    class hal
+    capabilities NET_ADMIN NET_RAW SYS_MODULE
+    user root
+    group root wifi gps
+    disabled
+    oneshot
+    seclabel u:r:recovery:s0
