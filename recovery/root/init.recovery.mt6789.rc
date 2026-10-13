@@ -66,11 +66,26 @@ service vendor.gatekeeper-1-0 /vendor/bin/hw/android.hardware.gatekeeper@1.0-ser
     seclabel u:r:recovery:s0
 
 service vendor.keymint-trustonic /vendor/bin/hw/android.hardware.security.keymint-service.trustonic
-    class early_hal
     interface android.hardware.keymaster@4.0::IKeymasterDevice default
     interface android.hardware.keymaster@4.1::IKeymasterDevice default
-    user nobody
+    user root
+    group root
+    disabled
     seclabel u:r:recovery:s0
+
+service charger /system/bin/charger
+    override
+    disabled
+
+service charger_rec /charger -r
+    override
+    disabled
+
+on init
+    stop charger
+
+on boot
+    stop charger
 
 on property:ro.crypto.state=encrypted && property:ro.boot.dynamic_partitions=true
     start mobicore
@@ -79,3 +94,4 @@ on property:ro.crypto.state=encrypted && property:ro.boot.dynamic_partitions=tru
 
 on property:servicemanager.ready=true
     setprop sys.boot_completed 1
+
