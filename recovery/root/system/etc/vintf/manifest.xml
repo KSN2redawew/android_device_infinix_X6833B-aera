@@ -1,8 +1,4 @@
-<!--
-    Input:
-        manifest.xml
--->
-<manifest version="9.0" type="framework">
+<manifest version="1.0" type="framework">
     <hal format="hidl" max-level="6">
         <name>android.frameworks.displayservice</name>
         <transport>hwbinder</transport>
@@ -11,7 +7,6 @@
             <name>IDisplayService</name>
             <instance>default</instance>
         </interface>
-        <fqname>@1.0::IDisplayService/default</fqname>
     </hal>
     <hal format="hidl" max-level="5">
         <name>android.frameworks.schedulerservice</name>
@@ -21,7 +16,6 @@
             <name>ISchedulingPolicyService</name>
             <instance>default</instance>
         </interface>
-        <fqname>@1.0::ISchedulingPolicyService/default</fqname>
     </hal>
     <hal format="hidl">
         <name>android.frameworks.sensorservice</name>
@@ -31,7 +25,6 @@
             <name>ISensorManager</name>
             <instance>default</instance>
         </interface>
-        <fqname>@1.0::ISensorManager/default</fqname>
     </hal>
     <hal format="hidl">
         <name>android.hidl.manager</name>
@@ -41,7 +34,6 @@
             <name>IServiceManager</name>
             <instance>default</instance>
         </interface>
-        <fqname>@1.2::IServiceManager/default</fqname>
     </hal>
     <hal format="hidl">
         <name>android.hidl.memory</name>
@@ -51,7 +43,6 @@
             <name>IMapper</name>
             <instance>ashmem</instance>
         </interface>
-        <fqname>@1.0::IMapper/ashmem</fqname>
     </hal>
     <hal format="hidl">
         <name>android.hidl.token</name>
@@ -61,7 +52,6 @@
             <name>ITokenManager</name>
             <instance>default</instance>
         </interface>
-        <fqname>@1.0::ITokenManager/default</fqname>
     </hal>
     <hal format="hidl">
         <name>android.system.net.netd</name>
@@ -71,7 +61,6 @@
             <name>INetd</name>
             <instance>default</instance>
         </interface>
-        <fqname>@1.1::INetd/default</fqname>
     </hal>
     <hal format="hidl">
         <name>android.system.wifi.keystore</name>
@@ -81,7 +70,6 @@
             <name>IKeystore</name>
             <instance>default</instance>
         </interface>
-        <fqname>@1.0::IKeystore/default</fqname>
     </hal>
     <hal format="native">
         <name>netutils-wrapper</name>

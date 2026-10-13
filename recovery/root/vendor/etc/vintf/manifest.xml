@@ -29,7 +29,7 @@
         manifest_target_level_s.xml
         manifest.xml
 -->
-<manifest version="9.0" type="device" target-level="9">
+<manifest version="4.0" type="device" target-level="6">
     <hal format="hidl">
         <name>android.hardware.audio</name>
         <transport>hwbinder</transport>
@@ -38,7 +38,6 @@
             <name>IDevicesFactory</name>
             <instance>default</instance>
         </interface>
-        <fqname>@7.0::IDevicesFactory/default</fqname>
     </hal>
     <hal format="hidl">
         <name>android.hardware.audio.effect</name>
@@ -48,7 +47,6 @@
             <name>IEffectsFactory</name>
             <instance>default</instance>
         </interface>
-        <fqname>@7.0::IEffectsFactory/default</fqname>
     </hal>
     <hal format="hidl">
         <name>android.hardware.bluetooth</name>
@@ -58,7 +56,6 @@
             <name>IBluetoothHci</name>
             <instance>default</instance>
         </interface>
-        <fqname>@1.1::IBluetoothHci/default</fqname>
     </hal>
     <hal format="hidl">
         <name>android.hardware.bluetooth.audio</name>
@@ -68,7 +65,6 @@
             <name>IBluetoothAudioProvidersFactory</name>
             <instance>default</instance>
         </interface>
-        <fqname>@2.1::IBluetoothAudioProvidersFactory/default</fqname>
     </hal>
     <hal format="hidl">
         <name>android.hardware.boot</name>
@@ -78,7 +74,6 @@
             <name>IBootControl</name>
             <instance>default</instance>
         </interface>
-        <fqname>@1.0::IBootControl/default</fqname>
     </hal>
     <hal format="hidl">
         <name>android.hardware.gatekeeper</name>
@@ -88,7 +83,6 @@
             <name>IGatekeeper</name>
             <instance>default</instance>
         </interface>
-        <fqname>@1.0::IGatekeeper/default</fqname>
     </hal>
     <hal format="hidl">
         <name>android.hardware.graphics.allocator</name>
@@ -98,7 +92,6 @@
             <name>IAllocator</name>
             <instance>default</instance>
         </interface>
-        <fqname>@4.0::IAllocator/default</fqname>
     </hal>
     <hal format="hidl">
         <name>android.hardware.graphics.composer</name>
@@ -108,7 +101,6 @@
             <name>IComposer</name>
             <instance>default</instance>
         </interface>
-        <fqname>@2.1::IComposer/default</fqname>
     </hal>
     <hal format="hidl">
         <name>android.hardware.graphics.mapper</name>
@@ -118,7 +110,6 @@
             <name>IMapper</name>
             <instance>default</instance>
         </interface>
-        <fqname>@4.0::IMapper/default</fqname>
     </hal>
     <hal format="hidl">
         <name>android.hardware.media.omx</name>
@@ -132,8 +123,6 @@
             <name>IOmxStore</name>
             <instance>default</instance>
         </interface>
-        <fqname>@1.0::IOmx/default</fqname>
-        <fqname>@1.0::IOmxStore/default</fqname>
     </hal>
     <hal format="hidl">
         <name>android.hardware.nfc</name>
@@ -143,7 +132,6 @@
             <name>INfc</name>
             <instance>default</instance>
         </interface>
-        <fqname>@1.2::INfc/default</fqname>
     </hal>
     <hal format="hidl">
         <name>android.hardware.radio</name>
@@ -165,24 +153,6 @@
             <instance>slot1</instance>
             <instance>slot2</instance>
         </interface>
-        <fqname>@1.2::IRadio/em1</fqname>
-        <fqname>@1.2::IRadio/em2</fqname>
-        <fqname>@1.2::IRadio/imsAospSlot1</fqname>
-        <fqname>@1.2::IRadio/imsAospSlot2</fqname>
-        <fqname>@1.2::IRadio/se1</fqname>
-        <fqname>@1.2::IRadio/se2</fqname>
-        <fqname>@1.2::IRadio/slot1</fqname>
-        <fqname>@1.2::IRadio/slot2</fqname>
-        <fqname>@1.2::ISap/slot1</fqname>
-        <fqname>@1.2::ISap/slot2</fqname>
-        <fqname>@1.6::IRadio/em1</fqname>
-        <fqname>@1.6::IRadio/em2</fqname>
-        <fqname>@1.6::IRadio/imsAospSlot1</fqname>
-        <fqname>@1.6::IRadio/imsAospSlot2</fqname>
-        <fqname>@1.6::IRadio/se1</fqname>
-        <fqname>@1.6::IRadio/se2</fqname>
-        <fqname>@1.6::IRadio/slot1</fqname>
-        <fqname>@1.6::IRadio/slot2</fqname>
     </hal>
     <hal format="hidl">
         <name>android.hardware.radio.config</name>
@@ -192,7 +162,6 @@
             <name>IRadioConfig</name>
             <instance>default</instance>
         </interface>
-        <fqname>@1.3::IRadioConfig/default</fqname>
     </hal>
     <hal format="hidl">
         <name>android.hardware.renderscript</name>
@@ -202,7 +171,6 @@
             <name>IDevice</name>
             <instance>default</instance>
         </interface>
-        <fqname>@1.0::IDevice/default</fqname>
     </hal>
     <hal format="hidl">
         <name>android.hardware.secure_element</name>
@@ -213,8 +181,6 @@
             <instance>SIM1</instance>
             <instance>SIM2</instance>
         </interface>
-        <fqname>@1.2::ISecureElement/SIM1</fqname>
-        <fqname>@1.2::ISecureElement/SIM2</fqname>
     </hal>
     <hal format="hidl">
         <name>android.hardware.sensors</name>
@@ -224,7 +190,6 @@
             <name>ISensors</name>
             <instance>default</instance>
         </interface>
-        <fqname>@2.0::ISensors/default</fqname>
     </hal>
     <hal format="hidl">
         <name>android.hardware.soundtrigger</name>
@@ -234,7 +199,6 @@
             <name>ISoundTriggerHw</name>
             <instance>default</instance>
         </interface>
-        <fqname>@2.3::ISoundTriggerHw/default</fqname>
     </hal>
     <hal format="hidl">
         <name>android.hardware.tetheroffload.config</name>
@@ -244,7 +208,6 @@
             <name>IOffloadConfig</name>
             <instance>default</instance>
         </interface>
-        <fqname>@1.0::IOffloadConfig/default</fqname>
     </hal>
     <hal format="hidl">
         <name>android.hardware.tetheroffload.control</name>
@@ -254,7 +217,6 @@
             <name>IOffloadControl</name>
             <instance>default</instance>
         </interface>
-        <fqname>@1.1::IOffloadControl/default</fqname>
     </hal>
     <hal format="hidl">
         <name>android.hardware.thermal</name>
@@ -265,8 +227,6 @@
             <name>IThermal</name>
             <instance>default</instance>
         </interface>
-        <fqname>@1.0::IThermal/default</fqname>
-        <fqname>@2.0::IThermal/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.mediatek.hardware.aee</name>
@@ -277,8 +237,6 @@
             <instance>AEE</instance>
             <instance>default</instance>
         </interface>
-        <fqname>@1.1::IAee/AEE</fqname>
-        <fqname>@1.1::IAee/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.mediatek.hardware.apmonitor</name>
@@ -288,7 +246,6 @@
             <name>IApmService</name>
             <instance>apm_hidl_service</instance>
         </interface>
-        <fqname>@2.0::IApmService/apm_hidl_service</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.mediatek.hardware.atci</name>
@@ -298,7 +255,6 @@
             <name>IAtcid</name>
             <instance>default</instance>
         </interface>
-        <fqname>@1.0::IAtcid/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.mediatek.hardware.bluetooth.audio</name>
@@ -308,7 +264,6 @@
             <name>IBluetoothAudioProvidersFactory</name>
             <instance>default</instance>
         </interface>
-        <fqname>@2.2::IBluetoothAudioProvidersFactory/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.mediatek.hardware.camera.atms</name>
@@ -318,7 +273,6 @@
             <name>IATMs</name>
             <instance>default</instance>
         </interface>
-        <fqname>@1.0::IATMs/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.mediatek.hardware.camera.bgservice</name>
@@ -328,7 +282,6 @@
             <name>IBGService</name>
             <instance>internal/0</instance>
         </interface>
-        <fqname>@1.1::IBGService/internal/0</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.mediatek.hardware.camera.isphal</name>
@@ -338,7 +291,6 @@
             <name>IISPModule</name>
             <instance>internal/0</instance>
         </interface>
-        <fqname>@1.1::IISPModule/internal/0</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.mediatek.hardware.composer_ext</name>
@@ -348,7 +300,6 @@
             <name>IComposerExt</name>
             <instance>default</instance>
         </interface>
-        <fqname>@1.0::IComposerExt/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.mediatek.hardware.dmc</name>
@@ -358,7 +309,6 @@
             <name>IDmcService</name>
             <instance>dmc_hidl_service</instance>
         </interface>
-        <fqname>@1.2::IDmcService/dmc_hidl_service</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.mediatek.hardware.engineermode</name>
@@ -368,7 +318,6 @@
             <name>IEmd</name>
             <instance>EmHidlServer</instance>
         </interface>
-        <fqname>@1.3::IEmd/EmHidlServer</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.mediatek.hardware.keymaster_attestation</name>
@@ -378,7 +327,6 @@
             <name>IKeymasterDevice</name>
             <instance>default</instance>
         </interface>
-        <fqname>@1.1::IKeymasterDevice/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.mediatek.hardware.log</name>
@@ -392,11 +340,6 @@
             <instance>MobileLogHidlServer</instance>
             <instance>ModemLogHidlServer</instance>
         </interface>
-        <fqname>@1.0::ILog/ATMWiFiHidlServer</fqname>
-        <fqname>@1.0::ILog/ConnsysFWHidlServer</fqname>
-        <fqname>@1.0::ILog/LoggerHidlServer</fqname>
-        <fqname>@1.0::ILog/MobileLogHidlServer</fqname>
-        <fqname>@1.0::ILog/ModemLogHidlServer</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.mediatek.hardware.mdmonitor</name>
@@ -406,7 +349,6 @@
             <name>IMDMonitorService</name>
             <instance>default</instance>
         </interface>
-        <fqname>@1.0::IMDMonitorService/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.mediatek.hardware.mmagent</name>
@@ -416,7 +358,6 @@
             <name>IMMAgent</name>
             <instance>default</instance>
         </interface>
-        <fqname>@1.1::IMMAgent/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.mediatek.hardware.mms</name>
@@ -426,7 +367,6 @@
             <name>IMms</name>
             <instance>default</instance>
         </interface>
-        <fqname>@1.6::IMms/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.mediatek.hardware.mtkpower</name>
@@ -440,8 +380,6 @@
             <name>IMtkPower</name>
             <instance>default</instance>
         </interface>
-        <fqname>@1.2::IMtkPerf/default</fqname>
-        <fqname>@1.2::IMtkPower/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.mediatek.hardware.mtkradioex</name>
@@ -468,24 +406,6 @@
             <instance>mtkSmartRatSwitch1</instance>
             <instance>mtkSmartRatSwitch2</instance>
         </interface>
-        <fqname>@3.0::IMtkRadioEx/imsSlot1</fqname>
-        <fqname>@3.0::IMtkRadioEx/imsSlot2</fqname>
-        <fqname>@3.0::IMtkRadioEx/mtkAssist1</fqname>
-        <fqname>@3.0::IMtkRadioEx/mtkAssist2</fqname>
-        <fqname>@3.0::IMtkRadioEx/mtkCap1</fqname>
-        <fqname>@3.0::IMtkRadioEx/mtkCap2</fqname>
-        <fqname>@3.0::IMtkRadioEx/mtkEm1</fqname>
-        <fqname>@3.0::IMtkRadioEx/mtkEm2</fqname>
-        <fqname>@3.0::IMtkRadioEx/mtkRcs1</fqname>
-        <fqname>@3.0::IMtkRadioEx/mtkRcs2</fqname>
-        <fqname>@3.0::IMtkRadioEx/mtkRsu1</fqname>
-        <fqname>@3.0::IMtkRadioEx/mtkRsu2</fqname>
-        <fqname>@3.0::IMtkRadioEx/mtkSe1</fqname>
-        <fqname>@3.0::IMtkRadioEx/mtkSe2</fqname>
-        <fqname>@3.0::IMtkRadioEx/mtkSlot1</fqname>
-        <fqname>@3.0::IMtkRadioEx/mtkSlot2</fqname>
-        <fqname>@3.0::IMtkRadioEx/mtkSmartRatSwitch1</fqname>
-        <fqname>@3.0::IMtkRadioEx/mtkSmartRatSwitch2</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.mediatek.hardware.netdagent</name>
@@ -495,7 +415,6 @@
             <name>INetdagent</name>
             <instance>default</instance>
         </interface>
-        <fqname>@1.0::INetdagent/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.mediatek.hardware.nvram</name>
@@ -505,7 +424,6 @@
             <name>INvram</name>
             <instance>default</instance>
         </interface>
-        <fqname>@1.1::INvram/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.mediatek.hardware.nwk_opt</name>
@@ -515,7 +433,6 @@
             <name>INwkOpt</name>
             <instance>default</instance>
         </interface>
-        <fqname>@1.0::INwkOpt/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.mediatek.hardware.pq</name>
@@ -525,7 +442,6 @@
             <name>IPictureQuality</name>
             <instance>default</instance>
         </interface>
-        <fqname>@2.15::IPictureQuality/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.mediatek.hardware.videotelephony</name>
@@ -535,7 +451,6 @@
             <name>IVideoTelephony</name>
             <instance>default</instance>
         </interface>
-        <fqname>@1.0::IVideoTelephony/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.nxp.nxpnfc</name>
@@ -545,7 +460,6 @@
             <name>INxpNfc</name>
             <instance>default</instance>
         </interface>
-        <fqname>@2.0::INxpNfc/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.nxp.nxpnfclegacy</name>
@@ -555,7 +469,6 @@
             <name>INxpNfcLegacy</name>
             <instance>default</instance>
         </interface>
-        <fqname>@1.0::INxpNfcLegacy/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.transsion.hardware.hyperion.hap</name>
@@ -565,7 +478,6 @@
             <name>IHap</name>
             <instance>default</instance>
         </interface>
-        <fqname>@1.0::IHap/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.transsion.hardware.tranlog</name>
@@ -575,7 +487,6 @@
             <name>ITranLog</name>
             <instance>default</instance>
         </interface>
-        <fqname>@1.0::ITranLog/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.transsion.hardware.tranlogconfig</name>
@@ -585,7 +496,6 @@
             <name>ITranLogConfig</name>
             <instance>default</instance>
         </interface>
-        <fqname>@1.0::ITranLogConfig/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.trustonic.tee</name>
@@ -595,7 +505,6 @@
             <name>ITee</name>
             <instance>default</instance>
         </interface>
-        <fqname>@1.1::ITee/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.trustonic.tee.tui</name>
@@ -605,10 +514,9 @@
             <name>ITui</name>
             <instance>default</instance>
         </interface>
-        <fqname>@1.0::ITui/default</fqname>
     </hal>
     <sepolicy>
         <version>31.0</version>
     </sepolicy>
-    <kernel target-level="9"/>
+    <kernel target-level="6"/>
 </manifest>
