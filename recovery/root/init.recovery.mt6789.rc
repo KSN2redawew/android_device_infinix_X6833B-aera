@@ -83,11 +83,17 @@ service charger_rec /charger -r
     override
     disabled
 
+service logd /system/bin/logd
+    override
+    disabled
+
 on init
     stop charger
+    stop logd
 
 on boot
     stop charger
+    stop logd
     setprop sys.usb.config adb
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "schedutil"
     write /sys/devices/system/cpu/cpu6/cpufreq/scaling_governor "schedutil"

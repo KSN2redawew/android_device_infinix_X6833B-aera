@@ -157,6 +157,7 @@ TW_THEME := portrait_hdpi
 TARGET_USES_MKE2FS := true
 TW_LOAD_VENDOR_BOOT_MODULES := true
 TW_DEFAULT_MTP := false
+TW_SKIP_ADDITIONAL_FSTAB := true
 
 # Display & AERA UI Metrics
 AERA_UI_ADAPTIVE_RESOLUTION := true
