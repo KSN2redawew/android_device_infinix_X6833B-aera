@@ -5,8 +5,6 @@ on init
     setprop sys.usb.configfs 1
     setprop sys.usb.controller "musb-hdrc"
     setprop sys.usb.ffs.aio_compat 0
-    setprop sys.usb.config adb
-    setprop persist.sys.usb.config adb
     export LD_LIBRARY_PATH /system/lib64:/vendor/lib64:/vendor/lib64/hw
     setprop crypto.ready 1
     start boot-hal-1-2
@@ -17,7 +15,9 @@ on fs
     install_keyring
 
 on boot
+    setprop sys.usb.config none
     setprop sys.usb.config adb
+    setprop persist.sys.usb.config adb
 
 on post-fs-data
     start health-hal-2-1
