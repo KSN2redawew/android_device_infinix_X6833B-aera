@@ -14,7 +14,7 @@ $(call inherit-product, vendor/twrp/config/common.mk)
 PRODUCT_NAME := twrp_X6833B
 PRODUCT_DEVICE := Infinix-X6833B
 PRODUCT_BRAND := Infinix
-PRODUCT_MODEL := Infinix X6833B
+PRODUCT_MODEL := Infinix NOTE 30
 PRODUCT_MANUFACTURER := INFINIX
 
 PRODUCT_GMS_CLIENTID_BASE := android-infinix

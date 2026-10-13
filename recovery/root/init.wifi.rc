@@ -15,6 +15,8 @@ on boot
     mkdir /tmp/wifi/sockets 0770 root root
     mkdir /tmp/misc 0770 root root
     mkdir /tmp/misc/wifi 0770 root root
+    mkdir /tmp/recovery 0777 root root
+    mkdir /tmp/recovery/sockets 0777 root root
     mkdir /data/misc 01771 system misc
     mkdir /data/misc/wifi 0770 wifi wifi
     mkdir /data/misc/wifi/sockets 0770 wifi wifi
@@ -42,6 +44,12 @@ on property:vendor.connsys.driver.ready=yes
     insmod /lib/modules/wlan_drv_gen4m_6789.ko
     start wlan_assistant
 
+on property:sys.aera.wlan.up=1
+    mkdir /tmp/recovery 0777 root root
+    mkdir /tmp/recovery/sockets 0777 root root
+    start wpa_supplicant
+    setprop sys.aera.wlan.up 0
+
 service wmt_loader /vendor/bin/wmt_loader
     class early_hal
     user root
@@ -64,17 +72,9 @@ service wlan_assistant /vendor/bin/wlan_assistant
     disabled
     seclabel u:r:recovery:s0
 
-service wpa_supplicant /vendor/bin/hw/wpa_supplicant \
+service wpa_supplicant /system/bin/wpa_supplicant \
     -Dnl80211 -iwlan0 -c/vendor/etc/wifi/wpa_supplicant.conf \
-    -O/data/vendor/wifi/wpa/sockets -dd \
-    -g@android:wpa_wlan0
-    interface android.hardware.wifi.supplicant@1.0::ISupplicant default
-    interface android.hardware.wifi.supplicant@1.1::ISupplicant default
-    interface android.hardware.wifi.supplicant@1.2::ISupplicant default
-    interface android.hardware.wifi.supplicant@1.3::ISupplicant default
-    interface android.hardware.wifi.supplicant@1.4::ISupplicant default
-    socket wpa_wlan0 dgram 660 wifi wifi
-    class main
+    -O/tmp/recovery/sockets -dd
     user root
     group root wifi inet keystore
     disabled

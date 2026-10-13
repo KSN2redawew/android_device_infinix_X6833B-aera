@@ -1,7 +1,13 @@
+# Model
+ro.product.model=Infinix NOTE 30
+
+# Display Density
+ro.sf.lcd_density=480
+
 # Fstab
 ro.postinstall.fstab.prefix=/system
 
-# USB MTP
+# USB
 ro.sys.usb.storage.type=mtp
 
 # Crypto
